@@ -8,14 +8,65 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body>
-    <h2><%=title %></h2>
+    <h3><%=title %></h3>
     <div>
-        <ul>
-            <% for (let user of users) { %>
-            <li><%= user.nama%> - <%= user.umur %> </li>
-            <% } %>
-        </ul>
+
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">id</th>
+                <th scope="col">Nama</th>
+                <th scope="col">No Peserta</th>
+                <th scope="col">Umur</th>
+                <th scope="col">Nama Ibu</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <% for (let user of users) { %>
+                  <tr>
+                  <th scope="row"><%= user.id %></th>
+                  <th scope="row"><%= user.nama %></th>
+                  <th scope="row"><%= user.no_peserta %></th>
+                  <th scope="row"><%= user.umur %></th>
+                  <th scope="row"><%= user.nama_ibu %></th>
+                  <% } %>
+
+
+              </tr>
+              
+            </tbody>
+          </table>
+          <form action="/tambah" method="post">
+            <h3>Daftarkan Murid Baru</h3>
+            <div class="row mb-3">
+              <label for="nama" class="col-sm-2 col-form-label">Nama</label>
+              <div class="col-sm-10">
+                <input type="text" name ="nama" class="form-control" >
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="umur" class="col-sm-2 col-form-label">Umur</label>
+              <div class="col-sm-10">
+                <input type="text" name="umur" class="form-control" >
+              </div>
+              <div class="row mb-3">
+                <label for="umur" class="col-sm-2 col-form-label">Umur</label>
+                <div class="col-sm-10">
+                  <input type="text" name="umur" class="form-control" >
+                </div>
+            </div>
+            <div class="row mb-3">
+              <label for="nama_ibu" class="col-sm-2 col-form-label">Nama Ibu</label>
+              <div class="col-sm-10">
+                <input type="text" name="nama_ibu" class="form-control" >
+            </div>
+            <input type="submit" class="btn btn-primary ms-3" value="DAFTAR"/>
+            </form>
+            
+            
     </div>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>
