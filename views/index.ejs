@@ -11,12 +11,12 @@
     <h3><%=title %></h3>
     <div>
 
-        <table class="table">
+        <table class="table container" style="max-width: auto;">
             <thead>
               <tr>
                 <th scope="col">id</th>
                 <th scope="col">Nama</th>
-                <th scope="col">No Peserta</th>
+                <th scope="col">No Nisn</th>
                 <th scope="col">Umur</th>
                 <th scope="col">Nama Ibu</th>
               </tr>
@@ -27,7 +27,7 @@
                   <tr>
                   <th scope="row"><%= user.id %></th>
                   <th scope="row"><%= user.nama %></th>
-                  <th scope="row"><%= user.no_peserta %></th>
+                  <th scope="row"><%= user.no_nisn %></th>
                   <th scope="row"><%= user.umur %></th>
                   <th scope="row"><%= user.nama_ibu %></th>
                   <% } %>
@@ -37,29 +37,32 @@
               
             </tbody>
           </table>
-          <form action="/tambah" method="post">
+          <form action="/" method="post">
             <h3>Daftarkan Murid Baru</h3>
-            <div class="row mb-3">
+            <div class="row mb-3  container" >
               <label for="nama" class="col-sm-2 col-form-label">Nama</label>
               <div class="col-sm-10">
                 <input type="text" name ="nama" class="form-control" >
               </div>
             </div>
-            <div class="row mb-3">
+            <div class="row mb-3 container">
+              <label for="no_nisn" class="col-sm-2 col-form-label">No Nisn</label>
+              <div class="col-sm-10">
+                <input type="text" name ="no_nisn" class="form-control" >
+              </div>
+            </div>
+            <div class="row mb-3 container">
               <label for="umur" class="col-sm-2 col-form-label">Umur</label>
               <div class="col-sm-10">
-                <input type="text" name="umur" class="form-control" >
+                <input type="text" name ="umur" class="form-control" >
               </div>
-              <div class="row mb-3">
-                <label for="umur" class="col-sm-2 col-form-label">Umur</label>
-                <div class="col-sm-10">
-                  <input type="text" name="umur" class="form-control" >
-                </div>
             </div>
-            <div class="row mb-3">
+            <div class="row mb-3 container">
               <label for="nama_ibu" class="col-sm-2 col-form-label">Nama Ibu</label>
               <div class="col-sm-10">
-                <input type="text" name="nama_ibu" class="form-control" >
+                <input type="text" name ="nama_ibu" class="form-control" >
+              </div>
+            </div>
             </div>
             <input type="submit" class="btn btn-primary ms-3" value="DAFTAR"/>
             </form>
